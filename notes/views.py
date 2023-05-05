@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def index(request):
-    notes = Note.objects.all()
+    notes = Note.objects.filter(user = request.user)
     return render(request, "notes.html", {'notes': notes})
 
 @login_required
@@ -15,7 +15,9 @@ def create(request):
     if request.POST:
         form = createForm(request.POST)
         if form.is_valid():
-            form.save()
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
         return redirect(index)
     return render(request, 'create.html', {'form' : createForm})
 
