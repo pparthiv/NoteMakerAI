@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block create_note %}
+<div class='create'>
+    <h2>Create New Note</h2>
+    <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button>Create</button>
+    </form>
+</div>
+{% endblock %}

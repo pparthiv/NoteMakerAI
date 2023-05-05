@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>My Notes</h2>
+    <ul class="notes">
+      {% for note in notes %}
+        <li>
+          <h3>{{ note.title }}</h3>
+          <p id='date'>{{ note.date }}</p>
+          <br>
+          <p>{{ note.description }}</p>
+          <div class="actions">
+            <a href="{% url 'edit' note.id %}">Edit</a>
+            <a href="{% url 'delete' note.id %}">Delete</a>
+          </div>
+        </li>
+      {% empty %}
+        <p>No notes found.</p>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'create' %}"><button>Create</button></a>
+  </div>
+{% endblock %}
