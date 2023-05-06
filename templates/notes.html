@@ -6,14 +6,9 @@
     <ul class="notes">
       {% for note in notes %}
         <li>
-          <h3>{{ note.title }}</h3>
-          <p id='date'>{{ note.date }}</p>
+          <a href="{% url 'description' note.id %}"><button><h3 id='title'>{{ note.title }}</h3>
+          <p id='date'>{{ note.date }}</p></button></a>
           <br>
-          <p>{{ note.description }}</p>
-          <div class="actions">
-            <a href="{% url 'edit' note.id %}">Edit</a>
-            <a href="{% url 'delete' note.id %}">Delete</a>
-          </div>
         </li>
       {% empty %}
         <p>No notes found.</p>

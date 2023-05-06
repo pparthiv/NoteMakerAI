@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block description %}
+<div class='description'>
+    <a href="{% url 'base' %}">Go to MyPage</a>
+    <h2>{{ note.title }}</h2>
+    <p id='date'>{{ note.date }}</p>
+    <div id='desc'>
+        <p>{{ note.description|linebreaksbr }}</p>
+    </div>
+    <br>
+    <div class="actions">
+        <a href="{% url 'edit' note.id %}">Edit</a>
+        <a href="{% url 'delete' note.id %}">Delete</a>
+    </div>
+</div>
+{% endblock %}
