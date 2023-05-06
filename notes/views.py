@@ -11,6 +11,11 @@ def index(request):
     return render(request, "notes.html", {'notes': notes})
 
 @login_required
+def description(request, id):
+    note = get_object_or_404(Note, pk=id)
+    return render(request, "desciptionBlock.html", {'note': note})
+
+@login_required
 def create(request):
     if request.POST:
         form = createForm(request.POST)
@@ -27,7 +32,7 @@ def edit(request, id):
     form = createForm(request.POST or None, instance=note)
     if form.is_valid():
         form.save()
-        return redirect(index)
+        return redirect(description, id)
     return render(request, 'edit.html', {'form': form, 'notes': note})
 
 @login_required
