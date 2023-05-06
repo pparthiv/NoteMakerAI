@@ -2,6 +2,9 @@
 
 {% block create_note %}
 <div class='create'>
+    <a href="{% url 'base' %}">Go to MyPage</a>
+    <br>
+    <br>
     <h2>Create New Note</h2>
     <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
         {% csrf_token %}

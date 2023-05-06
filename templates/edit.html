@@ -2,11 +2,14 @@
 
 {% block edit_note %}
 <div class='edit'>
+    <a href="{% url 'base' %}">Go to MyPage</a>
+    <br>
+    <br>
     <h2>Edit Note</h2>
     <form method="POST" action="">
         {% csrf_token %}
         {{ form }}
-        <button>Save edit</button>
+        <button type="submit">Save edit</button>
     </form>
 </div>
 {% endblock %}

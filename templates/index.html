@@ -16,8 +16,8 @@
       {% endif %}
     </div>
     <div>
-      {% if user.is_authenticated %}          
-        <link rel="stylesheet" href="{% static 'css/notes.css' %}">
+      {% if user.is_authenticated %}
+        <link rel="stylesheet" href="{% static 'css/notesStyle.css' %}">
         {% block content %}
         {% endblock %}
 
@@ -25,7 +25,7 @@
         {% block create_note %}
         {% endblock %}
 
-        <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+        <link rel="stylesheet" href="{% static 'css/editStyle.css' %}">
         {% block edit_note %}
         {% endblock %}
 

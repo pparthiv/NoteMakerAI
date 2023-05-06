@@ -10,6 +10,7 @@
 
 .description h2 {
     font-size: 28px;
+    margin-top: 0;
 }
 
 #date {
@@ -32,15 +33,15 @@
 }
 
 .actions a {
-    font-size: 14px;
-    padding: 5px 10px;
+    font-size: 16px;
+    padding: 10px 20px;
     background-color: #0077cc;
     border: none;
     border-radius: 5px;
     color: white;
-    padding: 10px 20px;
     font-weight: bold;
     margin-right: 10px;
+    text-decoration: none;
 }
 
 .actions a:hover {
